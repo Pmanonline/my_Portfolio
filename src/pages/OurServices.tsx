@@ -83,7 +83,7 @@ const OurServices: React.FC = () => {
   return (
     <section
       id="services"
-      className="relative py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-primary-customDark overflow-hidden">
+      className="relative py-6 bg-gray-50 dark:bg-primary-customDark overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-secondary/8 to-primary/8 dark:from-secondary/4 dark:to-primary/4 rounded-full blur-3xl" />

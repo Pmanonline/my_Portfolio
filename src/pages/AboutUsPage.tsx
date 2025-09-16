@@ -342,40 +342,40 @@ const About: React.FC = () => {
             </div>
           </motion.div>
 
-          {/* Achievements */}
-          <motion.div variants={itemVariants} className="mb-10 md:mb-12">
-            <div className="text-center mb-6 md:mb-8">
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-dark dark:text-accent-cream mb-2">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+            className="mb-12 md:mb-16 py-8 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+            <div className="text-center mb-8 md:mb-12 max-w-4xl mx-auto px-4">
+              <h3 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-gray-900 dark:text-white mb-3 bg-gradient-to-r from-orange-600 to-orange-400 bg-clip-text text-transparent">
                 Key Achievements
               </h3>
-              <p className="text-base md:text-lg text-primary-dark/70 dark:text-accent-cream/70 max-w-3xl mx-auto">
-                Proven track record of delivering excellence in web development
+              <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                A proven track record of delivering excellence and innovation in
+                web development.
               </p>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 md:px-6">
               {achievements.map((achievement, index) => (
                 <motion.div
                   key={index}
-                  variants={cardVariants}
-                  whileHover={{ y: -6, scale: 1.04 }}
-                  className="relative bg-white dark:bg-accent-creamDark/10 rounded-xl p-5 md:p-6 lg:p-7 border border-gray-200 dark:border-accent-cream/10 backdrop-blur-sm hover:shadow-2xl transition-all duration-300 text-center">
-                  {/* Icon with subtle ring */}
-                  <div className="relative mx-auto mb-3 md:mb-4">
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-secondary/30 to-primary/30 blur-md"></div>
-                    <div className="relative w-12 h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full bg-gradient-to-br from-secondary/20 to-primary/20 flex items-center justify-center">
-                      <achievement.icon className="w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 text-secondary dark:text-secondary-light" />
+                  initial={{ y: 20, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  whileHover={{ y: -8, scale: 1.05 }}
+                  className="relative bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
+                  <div className="flex flex-col items-center">
+                    <div className="w-16 h-16 mb-4 rounded-full bg-gradient-to-br from-orange-100 to-blue-100 dark:from-gray-700/50 dark:to-gray-800 flex items-center justify-center">
+                      <achievement.icon className="w-8 h-8 text-orange-600 dark:text-orange-400" />
                     </div>
-                  </div>
-
-                  {/* Metric */}
-                  <div className="text-lg md:text-xl lg:text-2xl font-extrabold text-secondary dark:text-secondary-light mb-1 md:mb-2">
-                    {achievement.metric}
-                  </div>
-
-                  {/* Label */}
-                  <div className="text-xs md:text-sm lg:text-base text-primary-dark/80 dark:text-accent-cream/80 leading-tight">
-                    {achievement.label}
+                    <div className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                      {achievement.metric}
+                    </div>
+                    <div className="text-sm md:text-base text-gray-500 dark:text-gray-400 text-center max-w-[150px]">
+                      {achievement.label}
+                    </div>
                   </div>
                 </motion.div>
               ))}

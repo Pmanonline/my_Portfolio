@@ -305,7 +305,7 @@ const Portfolio: React.FC = () => {
   return (
     <section
       id="portfolio"
-      className="relative py-16 md:py-20 lg:py-24 bg-gray-50 dark:bg-gray-900 overflow-hidden">
+      className="relative pb-12  bg-gray-50 dark:bg-gray-900 overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-orange-500/8 to-blue-500/8 dark:from-orange-500/4 dark:to-blue-500/4 rounded-full blur-3xl" />
@@ -601,31 +601,6 @@ const Portfolio: React.FC = () => {
             <span>Load More Projects</span>
             <ArrowRight className="w-5 h-5" />
           </button>
-        </div>
-
-        {/* Call to Action Section */}
-        <div className="text-center bg-gradient-to-r from-orange-500/5 to-blue-500/5 dark:from-orange-500/8 dark:to-blue-500/8 rounded-xl p-8 md:p-12 border border-orange-500/20 dark:border-orange-400/20">
-          <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-            Like What You See?
-          </h3>
-          <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-            I'm always excited to work on new projects and collaborate with
-            amazing teams. Let's discuss how we can bring your ideas to life.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center space-x-2"
-              aria-label="Start a project">
-              <span>Start a Project</span>
-              <ArrowRight className="w-5 h-5" />
-            </button>
-            <button
-              className="border-2 border-orange-500 dark:border-orange-400 text-orange-500 dark:text-orange-400 hover:bg-orange-500 hover:text-white dark:hover:bg-orange-400 dark:hover:text-gray-900 px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:scale-105 flex items-center space-x-2"
-              aria-label="Download resume">
-              <Download className="w-5 h-5" />
-              <span>Download Resume</span>
-            </button>
-          </div>
         </div>
       </div>
 
