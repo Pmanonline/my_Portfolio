@@ -223,8 +223,8 @@ export const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const dispatch = useDispatch();
   const { mode } = useSelector((state: { theme: ThemeState }) => state.theme);
-  const navRef = useRef(null);
-  const mobileMenuRef = useRef(null);
+  const navRef = useRef<HTMLDivElement>(null); // Explicitly typed as HTMLDivElement
+  const mobileMenuRef = useRef<HTMLDivElement>(null); // Explicitly typed as HTMLDivElement
 
   // Handle scroll effect
   useEffect(() => {
@@ -241,25 +241,24 @@ export const Navbar: React.FC = () => {
 
   // Handle click outside to close mobile menu
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event: MouseEvent) => {
       if (
         isMobileMenuOpen &&
         mobileMenuRef.current &&
-        !mobileMenuRef.current.contains(event.target) &&
+        !mobileMenuRef.current.contains(event.target as Node) &&
         navRef.current &&
-        !navRef.current.contains(event.target)
+        !navRef.current.contains(event.target as Node)
       ) {
         setIsMobileMenuOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isMobileMenuOpen]);
 
   // Close mobile menu on escape key
   useEffect(() => {
-    const handleEscape = (event) => {
+    const handleEscape = (event: any) => {
       if (event.key === "Escape" && isMobileMenuOpen) {
         setIsMobileMenuOpen(false);
       }
