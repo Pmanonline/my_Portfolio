@@ -398,7 +398,8 @@ const About: React.FC = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-                <motion.button
+                <motion.a
+                  href="#contact"
                   whileHover={{
                     scale: 1.05,
                     boxShadow: "0 15px 30px rgba(249, 115, 22, 0.3)",
@@ -407,15 +408,16 @@ const About: React.FC = () => {
                   className="bg-gradient-to-r from-secondary to-secondary-dark hover:from-secondary-light hover:to-secondary-dark text-white px-6 py-3 rounded-lg font-semibold text-base shadow-lg transition-all duration-300 inline-flex items-center space-x-2">
                   <span>Start a Project</span>
                   <ArrowRight className="w-4 h-4" />
-                </motion.button>
+                </motion.a>
 
-                <motion.button
+                <motion.a
+                  href="#portfolio"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   className="border-2 border-secondary dark:border-secondary-light text-secondary dark:text-secondary-light hover:bg-secondary hover:text-white dark:hover:bg-secondary-light dark:hover:text-primary-dark px-6 py-3 rounded-lg font-semibold text-base transition-all duration-300 inline-flex items-center space-x-2">
                   <span>View Portfolio</span>
                   <Briefcase className="w-4 h-4" />
-                </motion.button>
+                </motion.a>
               </div>
             </div>
           </motion.div>
